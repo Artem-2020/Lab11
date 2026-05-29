@@ -1,0 +1,24 @@
+services:
+  python-app:
+    build:
+      context: ./python-app
+    image: lab11-python-app:latest
+    container_name: lab11-python-app
+    environment:
+      LIMIT: "100000"
+    cpus: "0.50"
+    mem_limit: 128m
+    memswap_limit: 128m
+    pids_limit: 64
+
+  rust-app:
+    build:
+      context: ./rust-app
+    image: lab11-rust-app:latest
+    container_name: lab11-rust-app
+    environment:
+      LIMIT: "100000"
+    cpus: "0.50"
+    mem_limit: 64m
+    memswap_limit: 64m
+    pids_limit: 64
